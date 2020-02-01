@@ -1,0 +1,75 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: 'comfortaa', sans-serif;
+  background-color: bisque;
+}
+
+.logo{
+  color: rgb(38, 30, 155) ;
+  text-transform: capitalize;
+  letter-spacing: 0.5vh;
+}
+.nav-links{
+  display: flex;
+  background-color: aqua;
+  justify-content: space-around;
+  width:30% ;
+}
+.nav-links a{
+  color: rgb(38, 30, 155);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14;
+
+}
+.burger{
+  background-color: bisque;
+  display: none;
+}
+
+.burger div{
+  width: 25px;
+  height: 5px;
+  margin: 5px;
+  background-color: white;
+}
+
+@media screen and (max-width:760px){
+  .nav-links{
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+    width: 50%;
+    transform: translate(100%);
+
+  }
+}
+
+@media screen and (max-width:1024px){
+  .nav-links{
+    width:50%;
+  }
+}

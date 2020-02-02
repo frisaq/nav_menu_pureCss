@@ -15,6 +15,7 @@ body {
 nav{
   display: flex;
   justify-content: space-around;
+  padding: 5px;
   align-items: center;
   min-height: 8vh;
   font-family: 'comfortaa', sans-serif;
@@ -33,7 +34,7 @@ nav{
   width:30% ;
 }
 .nav-links a{
-  color: rgb(38, 30, 155);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
@@ -47,9 +48,10 @@ nav{
 
 .burger div{
   width: 25px;
-  height: 5px;
+  height: 3px;
   margin: 5px;
   background-color: white;
+  transition: transform 0.5s ease-in  ;
 }
 
 @media screen and (max-width:760px){
@@ -63,8 +65,22 @@ nav{
     align-items: center;
     /*justify-content: center;*/
     width: 50%;
-    transform: translate(100%);
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in  ;
 
+  }
+  .nav-links li{
+   opacity: 0;
+  }
+  body{
+    overflow:hidden ;
+  }
+  .burger{
+    display: block;
+    cursor: pointer;
+  }
+  .nav-active{
+    transform: translateX(0%);
   }
 }
 
@@ -72,4 +88,27 @@ nav{
   .nav-links{
     width:50%;
   }
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+
+  }
+}
+
+.changeTo .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+.changeTo .line2{
+  opacity: 0;
+}
+.changeTo .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
 }
